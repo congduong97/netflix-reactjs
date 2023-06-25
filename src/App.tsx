@@ -1,15 +1,21 @@
 import { useEffect } from "react";
 import "./App.css";
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-YS15MYFHKB");
 
 function App() {
 
   useEffect(() => {
     window.addEventListener('message', (event) => {
       console.log('postMessage',event);
-      window?.gtag("event", "login", {
-        event_category: "access",
-        event_label: "login"
-    });
+      ReactGA.event({
+        category: "your category",
+        action: "your action",
+        label: "your label", // optional
+        nonInteraction: true, // optional, true/false
+        transport: "xhr", // optional, beacon/xhr/image
+      });
       
     })
   
