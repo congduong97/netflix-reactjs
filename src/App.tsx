@@ -6,6 +6,10 @@ function App() {
   useEffect(() => {
     window.addEventListener('message', (event) => {
       console.log('postMessage',event);
+      window?.gtag("event", "login", {
+        event_category: "access",
+        event_label: "login"
+    });
       
     })
   
