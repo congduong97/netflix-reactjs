@@ -18,6 +18,11 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx">
+       gtag('event', 'screen_view', {
+        'app_name': 'myAppName',
+        'screen_name': 'Home'
+      });
+    </script>
   </body>
 </html>
