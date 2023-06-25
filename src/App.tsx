@@ -10,11 +10,9 @@ function App() {
     window.addEventListener('message', (event) => {
       console.log('postMessage',event);
       ReactGA.event({
-        category: "your category",
-        action: "your action",
-        label: "your label", // optional
-        nonInteraction: true, // optional, true/false
-        transport: "xhr", // optional, beacon/xhr/image
+        category: event.data.category,
+        action: event.data.event,
+        label:  event.data.label,
       });
       
     })
